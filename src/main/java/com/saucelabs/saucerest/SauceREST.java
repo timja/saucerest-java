@@ -182,11 +182,11 @@ public class SauceREST implements Serializable {
     }
 
     public Platform getPlatform(DataCenter dataCenter) {
-        return new Platform(dataCenter);
+        return new Platform(this.username, this.accessKey, dataCenter);
     }
 
     public Platform getPlatform() {
-        return new Platform(this.apiServer);
+        return new Platform(this.username, this.accessKey, this.apiServer);
     }
 
     public RealDevices getRealDevices(DataCenter dataCenter) {
